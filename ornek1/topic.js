@@ -17,11 +17,11 @@ async function createTopic() {
             topics: [
                 {
                     topic: "Logs",
-                    numPartitions: 1
+                    numPartitions: 1 
                 },
                 {
                     topic: "Logs2",
-                    numPartitions: 2
+                    numPartitions: 2 
                 }
             ]
         })

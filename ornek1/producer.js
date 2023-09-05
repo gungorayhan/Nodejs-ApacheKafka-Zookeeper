@@ -1,5 +1,9 @@
 const {Kafka} = require("kafkajs")
 
+//node consumer.js Logs || Logs2
+const topic_name = process.argv[2] || "Logs2";
+const partition=process.argv[3] || 0;
+
 createProducer();
 
 async function createProducer(){
@@ -14,11 +18,11 @@ async function createProducer(){
         await producer.connect();
 
         const messa_result = await producer.send({
-            topic:"Logs",
+            topic:topic_name,
             messages:[
                 {
                     value:"bu bir test log mesajıdır. partition 0 a gidecek ",
-                    partition:0
+                    partition:partition
                 }
             ]
         })

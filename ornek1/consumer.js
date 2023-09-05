@@ -1,5 +1,8 @@
 const {Kafka} = require("kafkajs")
 
+//node consumer.js Logs || Logs2
+const topic_name =process.argv[2] || "Logs2"
+
 createConsumer();
 
 async function createConsumer(){
@@ -18,13 +21,13 @@ async function createConsumer(){
 
         //consumer sabscribe
         await consumer.subscribe({
-            topic:"Logs", //subscribe olacağı topic
+            topic:topic_name, //subscribe olacağı topic
             fromBeginning:true // baştan başlayarak oku. davranışını tanımlıyoruz
         })
 
         await consumer.run({
             eachMessage:async result=>{
-                console.log(` Gelen mesaj ${result.message.value} : Partition:=>`)
+                console.log(` Gelen mesaj ${result.message.value} : Partition:=>${result.partition}`)
             }
         })
 
