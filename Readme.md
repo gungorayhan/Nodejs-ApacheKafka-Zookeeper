@@ -12,4 +12,4 @@ bir adet consumer çalışıyor,
 producer dan Logs2 nin partition 0 ve 1 e mesaj attık 
 consumer önce 0 sonrasında 1. parititon ı okuyacak.<br/>
  fakat biz consumer ı 2 adet yapar isek; 
- consumer grup load balancing yapar ve partition ları ayrı consumerlar okur
+ consumer grup rebalancing yapar ve partition ları ayrı consumerlar okur
